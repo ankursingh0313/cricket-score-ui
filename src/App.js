@@ -18,9 +18,15 @@ export default function CricketScores() {
     const fetchMatches = async () => {
       try {
         const [liveRes, recentRes, upcomingRes] = await Promise.all([
-          axios.get("http://localhost:5001/api/matches/live"),
-          axios.get("http://localhost:5001/api/matches/recent"),
-          axios.get("http://localhost:5001/api/matches/upcoming"),
+          axios.get(
+            "https://cricket-score-server.onrender.com/api/matches/live"
+          ),
+          axios.get(
+            "https://cricket-score-server.onrender.com/api/matches/recent"
+          ),
+          axios.get(
+            "https://cricket-score-server.onrender.com/api/matches/upcoming"
+          ),
         ]);
         const filterMatches = (raw) =>
           raw.data.typeMatches?.flatMap(
@@ -60,7 +66,7 @@ export default function CricketScores() {
     // console.log("Match ID: ", matchId);
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/matches/live-score?matchId=${matchId}`
+        `https://cricket-score-server.onrender.com/api/matches/live-score?matchId=${matchId}`
       );
       // console.log(response);
       setLiveScoreData(response.data);
