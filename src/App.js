@@ -77,6 +77,12 @@ export default function CricketScores() {
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-2xl font-bold text-center mb-6">
         🏏 Cricket Match Center
+        <br />
+        <span className="text-sm text-gray-400">
+          <a href="https://github.com/ankursingh0313" target="blank">
+            @ankursingh0313
+          </a>
+        </span>
       </h1>
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
